@@ -13,7 +13,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: photo hero, quick-plan tiles, then guidebook sections:
-   stats, route map, towns strip, planning resources, gallery, dark footer. */
+   photo bands between stats, route map, towns strip, planning
+   resources and a lightbox gallery, then a dark footer. */
 :root {
   --ground: #f3f1ec;      /* bleached limestone */
   --panel: #e7e4dc;
@@ -216,6 +217,42 @@ p { margin: 0 0 1rem; }
 }
 .gallery figcaption { margin-top: .35rem; font: 400 .78rem/1.3 var(--mono); color: var(--muted); }
 
+
+/* Photo bands between sections */
+.band { position: relative; margin: 0; height: clamp(16rem, 42vw, 30rem); overflow: hidden; background: var(--panel); }
+.band img { width: 100%; height: 100%; object-fit: cover; }
+.band figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding-block: 2.5rem .9rem;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  background: linear-gradient(180deg, transparent, rgba(20,16,12,.6));
+  color: #fbfaf7; font: 400 .8rem/1.3 var(--mono);
+}
+.band figcaption span { display: block; max-width: var(--wide); margin-inline: auto; }
+.band + section, section + .band { border-top: 0; }
+
+/* Lightbox */
+.gallery a { display: block; border-radius: 2px; overflow: hidden; cursor: zoom-in; }
+.gallery a img { transition: transform .4s ease; }
+.gallery a:hover img { transform: scale(1.03); }
+.lightbox { position: fixed; inset: 0; z-index: 50; display: grid; grid-template-rows: auto 1fr auto; background: rgba(12,10,8,.97); color: #fbfaf7; }
+.lightbox[hidden] { display: none; }
+.lb-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: calc(env(safe-area-inset-top, 0px) + .75rem) max(16px, env(safe-area-inset-right, 0px)) .75rem max(16px, env(safe-area-inset-left, 0px));
+  font: 400 .8rem/1.3 var(--mono); }
+.lb-stage { position: relative; min-height: 0; display: grid; place-items: center; padding: 0 max(16px, env(safe-area-inset-right, 0px)) 0 max(16px, env(safe-area-inset-left, 0px)); }
+.lb-stage img { max-width: 100%; max-height: calc(100vh - 8.5rem); max-height: calc(100dvh - 8.5rem); object-fit: contain; }
+.lb-cap { padding: .75rem max(16px, env(safe-area-inset-right, 0px)) calc(env(safe-area-inset-bottom, 0px) + 1rem) max(16px, env(safe-area-inset-left, 0px)); text-align: center; font-size: .95rem; }
+.lb-btn { appearance: none; border: 0; background: rgba(251,250,247,.12); color: #fbfaf7; border-radius: 3px; padding: .55rem .8rem; font: 600 .95rem/1 var(--display); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
+.lb-btn:hover { background: rgba(251,250,247,.22); }
+.lb-btn:focus-visible { outline: 2px solid #f0a27f; outline-offset: 2px; }
+.lb-prev, .lb-next { position: absolute; top: 50%; transform: translateY(-50%); font-size: 1.4rem; padding: .9rem .8rem; }
+.lb-prev { left: max(8px, env(safe-area-inset-left, 0px)); }
+.lb-next { right: max(8px, env(safe-area-inset-right, 0px)); }
+.lb-top a { color: #f0a27f; }
+body.lb-open { overflow: hidden; }
+@media (prefers-reduced-motion: reduce) { .gallery a img { transition: none; } }
+
 /* Footer */
 footer { background: var(--night); color: #d9d3c9; padding-block: 3rem 3.5rem; font-size: .95rem; }
 footer .wrap { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 2rem 4rem; }
@@ -300,11 +337,15 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
     </div>
   </section>
 
+  <figure class="band"><img src="photos/wildflower-hills.jpg" alt="Hillsides purple with wildflowers in spring" width="2000" height="1500" loading="lazy" decoding="async"><figcaption><span>Hillsides purple with wildflowers in spring</span></figcaption></figure>
+
   <section id="route">
     <div class="wrap">
       <div class="column">
         <p class="eyebrow">Official Trails SA route</p>
         <h2>The route, both ways</h2>
+        <p>Most riders go south to north, starting in the Adelaide Hills and finishing at Blinman, across three main sections that each have a character and challenges of their own. A smaller number ride it north to south. That takes different logistics, but you finish among the green hills instead of out in the outback.</p>
+        <p>Green and white markers waymark the trail the whole way, but you still need a good set of maps.</p>
         <p>These routes were built directly from the Trails SA source. Export them in any format to load onto your bike computer, pin them for later, download them for offline use, or navigate with the RideWithGPS app.</p>
       </div>
       <div class="route-links">
@@ -337,6 +378,8 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
     </div>
   </section>
 
+  <figure class="band"><img src="photos/flinders-ranges-lookout.jpg" alt="Looking out to the Flinders Ranges" width="2000" height="1500" loading="lazy" decoding="async"><figcaption><span>Looking out to the Flinders Ranges</span></figcaption></figure>
+
   <section id="towns">
     <div class="wrap">
       <div class="column">
@@ -354,6 +397,8 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
       <p class="source">Town list from <a href="https://en.wikipedia.org/wiki/Mawson_Trail" target="_blank" rel="noopener">Wikipedia</a>. Check <a href="http://www.southaustraliantrails.com/trails/mawson-trail/" target="_blank" rel="noopener">Trails SA</a> for current services and route changes.</p>
     </div>
   </section>
+
+  <figure class="band"><img src="photos/sheep-mob.jpg" alt="A mob of sheep on the move" width="2000" height="1500" loading="lazy" decoding="async"><figcaption><span>A mob of sheep on the move</span></figcaption></figure>
 
   <section id="resources">
     <div class="wrap">
@@ -415,15 +460,14 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
       <div class="column">
         <p class="eyebrow">From the saddle</p>
         <h2>On the trail</h2>
-        <p class="muted">Landscapes from a ride along the Mawson Trail, October 2020.</p>
+        <p class="muted">Landscapes from a ride along the Mawson Trail, October 2020. Tap a photo to see it full size.</p>
       </div>
       <div class="gallery" id="gallery">
-        <figure><img src="photos/wildflower-hills.jpg" alt="Hillsides purple with wildflowers in spring" width="2000" height="1500" loading="lazy" decoding="async"><figcaption>Hillsides purple with wildflowers in spring</figcaption></figure>
-        <figure><img src="photos/flinders-ranges-lookout.jpg" alt="Looking out to the Flinders Ranges" width="2000" height="1500" loading="lazy" decoding="async"><figcaption>Looking out to the Flinders Ranges</figcaption></figure>
-        <figure><img src="photos/sunset-gravel-road.jpg" alt="Late light on a gravel road" width="2000" height="1500" loading="lazy" decoding="async"><figcaption>Late light on a gravel road</figcaption></figure>
-        <figure><img src="photos/rusted-car-wreck.jpg" alt="An old car wreck in the saltbush" width="2000" height="1500" loading="lazy" decoding="async"><figcaption>An old car wreck in the saltbush</figcaption></figure>
-        <figure><img src="photos/sheep-mob.jpg" alt="A mob of sheep on the move" width="2000" height="1500" loading="lazy" decoding="async"><figcaption>A mob of sheep on the move</figcaption></figure>
-        <figure><img src="photos/flinders-track-kangaroo.jpg" alt="A kangaroo crossing the track, Flinders Ranges" width="2000" height="1500" loading="lazy" decoding="async"><figcaption>A kangaroo crossing the track, Flinders Ranges</figcaption></figure>
+        <figure><a href="photos/full/wildflower-hills.jpg" data-full><img src="photos/wildflower-hills.jpg" alt="Hillsides purple with wildflowers in spring" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>Hillsides purple with wildflowers in spring</figcaption></figure>
+        <figure><a href="photos/full/flinders-ranges-lookout.jpg" data-full><img src="photos/flinders-ranges-lookout.jpg" alt="Looking out to the Flinders Ranges" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>Looking out to the Flinders Ranges</figcaption></figure>
+        <figure><a href="photos/full/rusted-car-wreck.jpg" data-full><img src="photos/rusted-car-wreck.jpg" alt="An old car wreck in the saltbush" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>An old car wreck in the saltbush</figcaption></figure>
+        <figure><a href="photos/full/sheep-mob.jpg" data-full><img src="photos/sheep-mob.jpg" alt="A mob of sheep on the move" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>A mob of sheep on the move</figcaption></figure>
+        <figure><a href="photos/full/flinders-track-kangaroo.jpg" data-full><img src="photos/flinders-track-kangaroo.jpg" alt="A kangaroo crossing the track, Flinders Ranges" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>A kangaroo crossing the track, Flinders Ranges</figcaption></figure>
       </div>
     </div>
   </section>
@@ -445,5 +489,64 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
   </div>
 </footer>
 
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb-top"><span id="lb-count"></span><span><a id="lb-orig" href="#" target="_blank" rel="noopener">Open original</a> &nbsp; <button class="lb-btn" id="lb-close" type="button">Close ✕</button></span></div>
+  <div class="lb-stage">
+    <img id="lb-img" alt="">
+    <button class="lb-btn lb-prev" id="lb-prev" type="button" aria-label="Previous photo">‹</button>
+    <button class="lb-btn lb-next" id="lb-next" type="button" aria-label="Next photo">›</button>
+  </div>
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+
+<script>
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('#gallery a[data-full]'));
+  var box = document.getElementById('lightbox'), img = document.getElementById('lb-img');
+  var cap = document.getElementById('lb-cap'), count = document.getElementById('lb-count'), orig = document.getElementById('lb-orig');
+  var i = 0, opener = null;
+
+  function show(n) {
+    i = (n + links.length) % links.length;
+    var a = links[i], thumb = a.querySelector('img');
+    img.onerror = function () { img.onerror = null; img.src = thumb.src; orig.href = thumb.src; };
+    img.src = a.href; img.alt = thumb.alt; orig.href = a.href;
+    cap.textContent = thumb.alt;
+    count.textContent = (i + 1) + ' / ' + links.length;
+    var next = new Image(); next.src = links[(i + 1) % links.length].href;
+  }
+  function open(n, a) {
+    opener = a; show(n);
+    box.hidden = false; document.body.classList.add('lb-open');
+    document.getElementById('lb-close').focus();
+  }
+  function close() {
+    box.hidden = true; document.body.classList.remove('lb-open'); img.removeAttribute('src');
+    if (opener) opener.focus();
+  }
+
+  links.forEach(function (a, n) {
+    a.addEventListener('click', function (e) { e.preventDefault(); open(n, a); });
+  });
+  document.getElementById('lb-close').addEventListener('click', close);
+  document.getElementById('lb-prev').addEventListener('click', function () { show(i - 1); });
+  document.getElementById('lb-next').addEventListener('click', function () { show(i + 1); });
+  box.addEventListener('click', function (e) { if (e.target === box || e.target.classList.contains('lb-stage')) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (box.hidden) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(i - 1);
+    else if (e.key === 'ArrowRight') show(i + 1);
+  });
+  var x0 = null;
+  box.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  box.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 50) show(dx < 0 ? i + 1 : i - 1);
+  });
+})();
+</script>
 </body>
 </html>
