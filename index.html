@@ -203,7 +203,7 @@ p { margin: 0 0 1rem; }
 /* Gallery */
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); gap: .75rem; margin-top: 2rem; }
 .gallery figure { margin: 0; }
-.gallery img, .ph { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 2px; background: var(--panel); }
+.gallery img, .ph { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 2px; background: var(--panel); }
 .ph {
   display: grid; place-items: center;
   background: repeating-linear-gradient(135deg, var(--panel) 0 12px, var(--ground) 12px 24px);
@@ -242,7 +242,7 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
   </div>
 </header>
 
-<div class="hero" id="top">
+<div class="hero" id="top" style="--hero-img: url('photos/flinders-track-kangaroo.jpg')">
   <div class="wrap">
     <p class="kicker">South Australia · Adelaide Hills to the Flinders Ranges</p>
     <h1>The Mawson<br>Trail</h1>
@@ -418,12 +418,12 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
         <p class="muted">Landscapes from a ride along the Mawson Trail, October 2020.</p>
       </div>
       <div class="gallery" id="gallery">
-        <figure><div class="ph">Photo coming soon</div></figure>
-        <figure><div class="ph">Photo coming soon</div></figure>
-        <figure><div class="ph">Photo coming soon</div></figure>
-        <figure><div class="ph">Photo coming soon</div></figure>
-        <figure><div class="ph">Photo coming soon</div></figure>
-        <figure><div class="ph">Photo coming soon</div></figure>
+        <figure><img src="photos/wildflower-hills.jpg" alt="Hillsides purple with wildflowers in spring" width="2000" height="1500" loading="lazy" decoding="async"><figcaption>Hillsides purple with wildflowers in spring</figcaption></figure>
+        <figure><img src="photos/flinders-ranges-lookout.jpg" alt="Looking out to the Flinders Ranges" width="2000" height="1500" loading="lazy" decoding="async"><figcaption>Looking out to the Flinders Ranges</figcaption></figure>
+        <figure><img src="photos/sunset-gravel-road.jpg" alt="Late light on a gravel road" width="2000" height="1500" loading="lazy" decoding="async"><figcaption>Late light on a gravel road</figcaption></figure>
+        <figure><img src="photos/rusted-car-wreck.jpg" alt="An old car wreck in the saltbush" width="2000" height="1500" loading="lazy" decoding="async"><figcaption>An old car wreck in the saltbush</figcaption></figure>
+        <figure><img src="photos/sheep-mob.jpg" alt="A mob of sheep on the move" width="2000" height="1500" loading="lazy" decoding="async"><figcaption>A mob of sheep on the move</figcaption></figure>
+        <figure><img src="photos/flinders-track-kangaroo.jpg" alt="A kangaroo crossing the track, Flinders Ranges" width="2000" height="1500" loading="lazy" decoding="async"><figcaption>A kangaroo crossing the track, Flinders Ranges</figcaption></figure>
       </div>
     </div>
   </section>
