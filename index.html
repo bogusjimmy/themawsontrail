@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>themawsontrail.com</title>
-<meta name="description" content="Planning to ride South Australia's Mawson Trail? The official route in both directions, the towns along the way, and the ten best resources to read before you ride.">
+<meta name="description" content="Planning to ride South Australia's Mawson Trail? The official route in both directions, the towns along the way, and the best resources for planning your ride.">
 <meta property="og:title" content="The Mawson Trail">
-<meta property="og:description" content="The official route in both directions, the towns along the way, and the ten best resources to read before you ride.">
+<meta property="og:description" content="The official route in both directions, the towns along the way, and the best resources for planning your ride.">
 <meta property="og:url" content="https://themawsontrail.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: photo hero, quick-plan tiles, then guidebook sections:
-   stats, route map, towns strip, reading list cards, gallery, dark footer. */
+   stats, route map, towns strip, planning resources, gallery, dark footer. */
 :root {
   --ground: #f3f1ec;      /* bleached limestone */
   --panel: #e7e4dc;
@@ -182,23 +182,28 @@ p { margin: 0 0 1rem; }
 .source { margin: 1.25rem 0 0; font: 400 .78rem/1.5 var(--mono); color: var(--muted); }
 
 /* Resources */
-.resources { list-style: none; margin: 2rem 0 0; padding: 0; counter-reset: site; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); gap: 1rem; }
+.resources { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); gap: 1rem; }
 .resource {
-  counter-increment: site; display: grid; grid-template-rows: auto auto 1fr; gap: .45rem;
+  display: grid; grid-template-rows: auto auto 1fr; gap: .45rem;
   padding: 1.25rem 1.25rem 1.3rem; background: var(--card); border: 1px solid var(--rule); border-radius: 4px; min-width: 0;
 }
-.resource .tag { display: flex; justify-content: space-between; gap: 1rem; font: 500 .75rem/1.2 var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--saltbush); }
-.resource .tag::after { content: counter(site, decimal-leading-zero); color: var(--ochre); }
+.resource .tag { font: 500 .75rem/1.2 var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--saltbush); }
 .resource p { margin: .35rem 0 .4rem; color: var(--muted); font-size: .98rem; }
 .resource ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .3rem; align-self: end; font-size: .98rem; }
 .resource li a { overflow-wrap: anywhere; }
-.bonus {
   margin-top: 1rem; padding: 1.5rem 1.4rem; background: var(--panel); border-radius: 4px;
   display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem 2rem; align-items: center;
 }
-.bonus p { margin: .4rem 0 .6rem; max-width: var(--measure); }
-.bonus .price { font: 700 1.9rem/1 var(--display); color: var(--ochre); }
-@media (max-width: 34rem) { .bonus { grid-template-columns: 1fr; } }
+
+.group { margin-top: 2.5rem; }
+.group + .group { margin-top: 3.5rem; }
+.group > h3 { font-size: 1.15rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.subhead { margin-top: 3rem; }
+.resource .price { margin-left: .5rem; font: 600 1rem/1 var(--display); letter-spacing: .04em; color: var(--ochre); }
+.more { margin: 1.75rem 0 0; padding: 1.1rem 0 0; border-top: 1px solid var(--rule); }
+.more h3 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.more ul { margin: .6rem 0 0; padding: 0; list-style: none; display: grid; gap: .55rem; }
+.more li span { display: block; font-size: .92rem; color: var(--muted); }
 
 /* Gallery */
 .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); gap: .75rem; margin-top: 2rem; }
@@ -275,6 +280,14 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
         <h2>One of Australia’s great off-road rides</h2>
         <p>The Mawson Trail starts at the top of the Torrens Linear Park on Gorge Road, just east of Adelaide, and runs north through the Mount Lofty Ranges, the Barossa and Clare valleys and the Mid North into the Flinders Ranges, finishing at Blinman.</p>
         <p>It is named after geologist and Antarctic explorer Sir Douglas Mawson, who studied the geology of the Flinders Ranges. Cycling groups began planning the trail in 1990 and volunteers marked out the route. It is mostly off-road and well suited to mountain bikes and bikepacking rigs.</p>
+        <div class="more">
+          <h3>Learn more about the trail</h3>
+          <ul>
+            <li><a href="http://www.southaustraliantrails.com/trails/mawson-trail/" target="_blank" rel="noopener">Trails SA</a><span>The official source of Mawson Trail information, closures and route changes.</span></li>
+            <li><a href="https://en.wikipedia.org/wiki/Mawson_Trail" target="_blank" rel="noopener">Wikipedia</a><span>History of the trail and information on the towns along it.</span></li>
+            <li><a href="http://www.davidhume.net/mawsontrail/" target="_blank" rel="noopener">Dave Hume’s Mawson Trail site</a><span>Comprehensive information from an artist who has ridden the trail many times.</span></li>
+          </ul>
+        </div>
       </div>
       <dl class="stats">
         <div><dt>Length</dt><dd>~900 <small>km</small></dd></div>
@@ -305,6 +318,22 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
       <div class="map">
         <iframe src="https://ridewithgps.com/embeds?type=collection&collectionId=9111372&title=The%20Mawson%20Trail&metricUnits=true&sampleGraph=true&distanceMarkers=true&privacyCode=rAb8qUgl2VEIOzAlMKVO9ITXH8ConTCL" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>
       </div>
+
+      <div class="group subhead">
+        <h3>Other ways to navigate</h3>
+        <ul class="resources">
+          <li class="resource">
+            <span class="tag">Route file</span>
+            <div><h3>OpenStreetMap route</h3><p>Another accurate source of the route, usable with the OsmAnd app for iOS and Android.</p></div>
+            <ul><li><a href="https://www.openstreetmap.org/relation/153983" target="_blank" rel="noopener">openstreetmap.org/relation/153983</a></li></ul>
+          </li>
+          <li class="resource">
+            <span class="tag">App</span>
+            <div><h3>The Mawson Trail App <span class="price">AU$21.99</span></h3><p>High resolution offline maps, a detailed elevation profile, trail and accommodation info along the way, gear advice, and first aid and emergency info. For iOS and Android.</p></div>
+            <ul><li><a href="https://www.findthefun.com.au/mawson-trail-app" target="_blank" rel="noopener">findthefun.com.au/mawson-trail-app</a></li></ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -330,83 +359,54 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
     <div class="wrap">
       <div class="column">
         <p class="eyebrow">Plan your ride</p>
-        <h2>The top 10 sites to visit before you ride</h2>
-        <p class="muted">Official information, route files, trip reports, gear lists and the community that knows the trail best.</p>
+        <h2>Get ready to ride</h2>
+        <p class="muted">Planning guides and bike setups from riders who know the trail, plus stories, events and a community to ask.</p>
       </div>
 
-      <ol class="resources">
-        <li class="resource">
-          <span class="tag">Official info</span>
-          <div><h3>Trails SA</h3><p>The official source of Mawson Trail information.</p></div>
-          <ul><li><a href="http://www.southaustraliantrails.com/trails/mawson-trail/" target="_blank" rel="noopener">southaustraliantrails.com</a></li></ul>
-        </li>
-        <li class="resource">
-          <span class="tag">Route files</span>
-          <div><h3>The Route</h3><p>Created directly from the Trails SA source. Export it, pin it, download it for offline use, or navigate in the RideWithGPS app.</p></div>
-          <ul>
-            <li><a href="https://ridewithgps.com/routes/34440377" target="_blank" rel="noopener">Official route, South to North</a></li>
-            <li><a href="https://ridewithgps.com/routes/34455868" target="_blank" rel="noopener">Official route, North to South</a></li>
-          </ul>
-        </li>
-        <li class="resource" id="r-plan">
-          <span class="tag">Planning &amp; bike setups</span>
-          <div><h3>La Velocita</h3><p>A series of blogs covering different ways to ride the trail and bike setups.</p></div>
-          <ul>
-            <li><a href="https://www.lavelocita.cc/la-velocita-rides/riding-the-mawson-trail" target="_blank" rel="noopener">Riding the Mawson Trail</a></li>
-            <li><a href="https://www.lavelocita.cc/la-velocita-rides/bikepacking-the-mawson-trail" target="_blank" rel="noopener">Bikepacking the Mawson Trail</a></li>
-            <li><a href="https://www.lavelocita.cc/guides-page/mawson-trail-bikepacking-setups" target="_blank" rel="noopener">Mawson Trail Bikepacking Setups</a></li>
-          </ul>
-        </li>
-        <li class="resource">
-          <span class="tag">Planning &amp; packing</span>
-          <div><h3>Nat Redmond</h3><p>A local CX champ’s site with a handy planning spreadsheet.</p></div>
-          <ul>
-            <li><a href="https://natredmond.wordpress.com/2019/12/11/mawson-trail-planning-and-bike-setup/#more-285" target="_blank" rel="noopener">Mawson Trail Planning and Bike Setup</a></li>
-            <li><a href="https://natredmond.wordpress.com/2019/12/11/mawson-trail-qa/#more-326" target="_blank" rel="noopener">Mawson Trail Q&amp;A</a></li>
-            <li><a href="https://natredmond.wordpress.com/2019/11/19/what-i-packed-for-the-mawson-trail/#more-258" target="_blank" rel="noopener">What I Packed For The Mawson Trail</a></li>
-          </ul>
-        </li>
-        <li class="resource">
-          <span class="tag">Route files</span>
-          <div><h3>OpenStreetMap route</h3><p>Another accurate source of the route, usable with the OsmAnd app for iOS and Android.</p></div>
-          <ul><li><a href="https://www.openstreetmap.org/relation/153983" target="_blank" rel="noopener">openstreetmap.org/relation/153983</a></li></ul>
-        </li>
-        <li class="resource">
-          <span class="tag">History &amp; towns</span>
-          <div><h3>Wikipedia</h3><p>History of the trail and information on the towns along it.</p></div>
-          <ul><li><a href="https://en.wikipedia.org/wiki/Mawson_Trail" target="_blank" rel="noopener">Mawson Trail on Wikipedia</a></li></ul>
-        </li>
-        <li class="resource" id="r-events">
-          <span class="tag">Supported event</span>
-          <div><h3>BikeSA Outback Odyssey</h3><p>A regular supported event to ride the trail, run by BikeSA.</p></div>
-          <ul><li><a href="https://bikesa.asn.au/outback-odyssey" target="_blank" rel="noopener">bikesa.asn.au/outback-odyssey</a></li></ul>
-        </li>
-        <li class="resource" id="r-community">
-          <span class="tag">Community</span>
-          <div><h3>Ride the Mawson Trail Facebook group</h3><p>A great place to ask questions and see other people’s experiences.</p></div>
-          <ul><li><a href="https://www.facebook.com/groups/198260994337150" target="_blank" rel="noopener">Join the group</a></li></ul>
-        </li>
-        <li class="resource">
-          <span class="tag">Guide</span>
-          <div><h3>Dave Hume’s Mawson Trail site</h3><p>Comprehensive information from an artist who has ridden the trail many times.</p></div>
-          <ul><li><a href="http://www.davidhume.net/mawsontrail/" target="_blank" rel="noopener">davidhume.net/mawsontrail</a></li></ul>
-        </li>
-        <li class="resource" id="r-stories">
-          <span class="tag">Ride story</span>
-          <div><h3>CyclingAbout: Riding the 900km Mawson Trail</h3><p>Alee Denham’s day-by-day account of riding the whole trail with a crew of strong, experienced cyclists in tough conditions. Great photos throughout.</p></div>
-          <ul><li><a href="https://www.cyclingabout.com/blog-bike-ride-along-the-900km-mawson-offroad-trail-australia/" target="_blank" rel="noopener">Read the trip report</a></li></ul>
-        </li>
-      </ol>
+      <div class="group" id="r-plan">
+        <h3>Planning &amp; bike setups</h3>
+        <ul class="resources">
+          <li class="resource">
+            <span class="tag">Guides &amp; setups</span>
+            <div><h3>La Velocita</h3><p>A series of blogs covering different ways to ride the trail and bike setups.</p></div>
+            <ul>
+              <li><a href="https://www.lavelocita.cc/la-velocita-rides/riding-the-mawson-trail" target="_blank" rel="noopener">Riding the Mawson Trail</a></li>
+              <li><a href="https://www.lavelocita.cc/la-velocita-rides/bikepacking-the-mawson-trail" target="_blank" rel="noopener">Bikepacking the Mawson Trail</a></li>
+              <li><a href="https://www.lavelocita.cc/guides-page/mawson-trail-bikepacking-setups" target="_blank" rel="noopener">Mawson Trail Bikepacking Setups</a></li>
+            </ul>
+          </li>
+          <li class="resource">
+            <span class="tag">Planning &amp; packing</span>
+            <div><h3>Nat Redmond</h3><p>A local CX champ’s site with a handy planning spreadsheet.</p></div>
+            <ul>
+              <li><a href="https://natredmond.wordpress.com/2019/12/11/mawson-trail-planning-and-bike-setup/#more-285" target="_blank" rel="noopener">Mawson Trail Planning and Bike Setup</a></li>
+              <li><a href="https://natredmond.wordpress.com/2019/12/11/mawson-trail-qa/#more-326" target="_blank" rel="noopener">Mawson Trail Q&amp;A</a></li>
+              <li><a href="https://natredmond.wordpress.com/2019/11/19/what-i-packed-for-the-mawson-trail/#more-258" target="_blank" rel="noopener">What I Packed For The Mawson Trail</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
 
-      <aside class="bonus" aria-label="Bonus resource">
-        <div>
-          <p class="eyebrow">Bonus</p>
-          <h3>The Mawson Trail App</h3>
-          <p class="muted">High resolution offline maps, a detailed elevation profile, trail and accommodation info along the way, gear advice, and first aid and emergency info. Available for iOS and Android.</p>
-          <a href="https://www.findthefun.com.au/mawson-trail-app" target="_blank" rel="noopener">findthefun.com.au/mawson-trail-app</a>
-        </div>
-        <div class="price">AU$21.99</div>
-      </aside>
+      <div class="group">
+        <h3>Stories, events &amp; community</h3>
+        <ul class="resources">
+          <li class="resource" id="r-stories">
+            <span class="tag">Ride story</span>
+            <div><h3>CyclingAbout: Riding the 900km Mawson Trail</h3><p>Alee Denham’s day-by-day account of riding the whole trail with a crew of strong, experienced cyclists in tough conditions. Great photos throughout.</p></div>
+            <ul><li><a href="https://www.cyclingabout.com/blog-bike-ride-along-the-900km-mawson-offroad-trail-australia/" target="_blank" rel="noopener">Read the trip report</a></li></ul>
+          </li>
+          <li class="resource" id="r-events">
+            <span class="tag">Supported event</span>
+            <div><h3>BikeSA Outback Odyssey</h3><p>A regular supported event to ride the trail, run by BikeSA.</p></div>
+            <ul><li><a href="https://bikesa.asn.au/outback-odyssey" target="_blank" rel="noopener">bikesa.asn.au/outback-odyssey</a></li></ul>
+          </li>
+          <li class="resource" id="r-community">
+            <span class="tag">Community</span>
+            <div><h3>Ride the Mawson Trail Facebook group</h3><p>A great place to ask questions and see other people’s experiences.</p></div>
+            <ul><li><a href="https://www.facebook.com/groups/198260994337150" target="_blank" rel="noopener">Join the group</a></li></ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
