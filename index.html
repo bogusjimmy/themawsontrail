@@ -142,6 +142,16 @@ h3 { margin: 0; font: 600 1.4rem/1.15 var(--display); letter-spacing: .02em; tex
 p { margin: 0 0 1rem; }
 .muted { color: var(--muted); }
 
+
+/* About */
+.about { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 2rem 4rem; align-items: center; }
+@media (max-width: 52rem) { .about { grid-template-columns: 1fr; } }
+.social { margin: 0; padding: 0; list-style: none; display: grid; gap: .6rem; }
+.social a { display: grid; gap: .2rem; padding: .9rem 1.1rem; background: var(--card); border: 1px solid var(--rule); border-radius: 4px; color: var(--ink); text-decoration: none; }
+.social .t { font: 600 1.2rem/1.1 var(--display); letter-spacing: .05em; text-transform: uppercase; }
+.social .d { font: 400 .8rem/1.2 var(--mono); color: var(--muted); }
+.social a:hover .t { color: var(--ochre); }
+
 /* Glance */
 .glance-side { min-width: 0; }
 .glance { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem 4rem; align-items: start; }
@@ -294,6 +304,7 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
     <a class="brand" href="#top">The Mawson Trail</a>
     <nav aria-label="Sections">
       <ul>
+        <li><a href="#about">About me</a></li>
         <li><a href="#glance">The trail</a></li>
         <li><a href="#route">Route</a></li>
         <li><a href="#towns">Towns</a></li>
@@ -308,7 +319,7 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
   <div class="wrap">
     <p class="kicker">South Australia · Adelaide Hills to the Flinders Ranges</p>
     <h1>The Mawson<br>Trail</h1>
-    <p class="lede">Almost 900 km of fire trails, farm tracks and quiet dirt roads, from the edge of Adelaide to Blinman in the Flinders Ranges. Everything you need to start planning your ride.</p>
+    <p class="lede">Almost 900 km of fire trails, farm tracks and quiet dirt roads, from the edge of Adelaide to Blinman in the Flinders Ranges. I’ve ridden it more than once, and this is everything I’ve learned to help you plan your own ride.</p>
     <div class="cta">
       <a class="btn" href="#route">See the route</a>
       <a class="btn ghost" href="#resources">Plan your ride</a>
@@ -330,6 +341,22 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
 </div>
 
 <main>
+  <section id="about">
+    <div class="wrap about">
+      <div class="column">
+        <p class="eyebrow">About me</p>
+        <h2>G’day, I’m David</h2>
+        <p>I’m a local cyclist and I’ve ridden the Mawson Trail a number of times, including as part of <a href="https://www.curvecycling.com/blogs/ride-library/race-to-the-rock-2020" target="_blank" rel="noopener">Race to the Rock 2020</a>. That’s an unsupported bikepacking race from the Fleurieu Peninsula to Uluru, and it follows the whole Mawson Trail on the way north.</p>
+        <p>I put this site together to share what I wish I’d known before my first ride: the official route, where to start, what the surface is really like, and the best guides and stories from other riders.</p>
+      </div>
+      <ul class="social">
+        <li><a href="https://www.strava.com/athletes/171160" target="_blank" rel="noopener"><span class="t">Strava</span><span class="d">Follow my rides</span></a></li>
+        <li><a href="https://www.instagram.com/bogusjimmy/" target="_blank" rel="noopener"><span class="t">Instagram</span><span class="d">@bogusjimmy</span></a></li>
+        <li><a href="https://www.curvecycling.com/blogs/ride-library/race-to-the-rock-2020" target="_blank" rel="noopener"><span class="t">Race to the Rock 2020</span><span class="d">Course and race recap</span></a></li>
+      </ul>
+    </div>
+  </section>
+
   <section id="glance">
     <div class="wrap glance">
       <div>
@@ -388,7 +415,7 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
           <h3>Where to start</h3>
           <p>There’s no sign at the southern trailhead on Gorge Road, just the first trail marker (<a href="https://www.google.com/maps/search/?api=1&query=Torrens+Linear+Park%2C+Gorge+Road%2C+Athelstone+SA" target="_blank" rel="noopener">map</a>). Many riders prefer to begin somewhere with more meaning and ride out to the trail:</p>
           <ul>
-            <li><a href="https://www.google.com/maps/search/?api=1&query=Sir+Douglas+Mawson+bust%2C+Elder+Hall%2C+North+Terrace%2C+Adelaide+SA" target="_blank" rel="noopener">Mawson’s bust, North Terrace</a><span>Our pick. A bronze bust outside Elder Hall at the University of Adelaide, where Mawson taught.</span></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Sir+Douglas+Mawson+bust%2C+Elder+Hall%2C+North+Terrace%2C+Adelaide+SA" target="_blank" rel="noopener">Mawson’s bust, North Terrace</a><span>My pick. A bronze bust outside Elder Hall at the University of Adelaide, where Mawson taught.</span></li>
             <li><a href="https://www.google.com/maps/search/?api=1&query=St+Jude%27s+Cemetery%2C+Brighton+SA" target="_blank" rel="noopener">Mawson’s grave, Brighton</a><span>Sir Douglas Mawson is buried at St Jude’s Cemetery by the beach in Brighton.</span></li>
             <li><a href="https://www.google.com/maps/search/?api=1&query=Victoria+Square%2C+Adelaide+SA" target="_blank" rel="noopener">Victoria Square, Adelaide</a><span>The centre of the city, for a full city-to-Blinman ride.</span></li>
           </ul>
@@ -451,7 +478,7 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
       <div class="column">
         <p class="eyebrow">Plan your ride</p>
         <h2>Get ready to ride</h2>
-        <p class="muted">Planning guides and bike setups from riders who know the trail, plus stories, events and a community to ask.</p>
+        <p class="muted">The planning guides, bike setups and stories I recommend, plus an event to ride it with support and a community to ask.</p>
       </div>
 
       <div class="group" id="r-plan">
@@ -508,7 +535,7 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
       <div class="column">
         <p class="eyebrow">From the saddle</p>
         <h2>On the trail</h2>
-        <p class="muted">Landscapes from a ride along the Mawson Trail, October 2020. Tap a photo to see it full size.</p>
+        <p class="muted">Landscapes from my rides along the Mawson Trail. Tap a photo to see it full size.</p>
       </div>
       <div class="gallery" id="gallery">
         <figure><a href="photos/full/flinders-ranges-lookout.jpg" data-full><img src="photos/flinders-ranges-lookout.jpg" alt="Looking out to the Flinders Ranges" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>Looking out to the Flinders Ranges</figcaption></figure>
@@ -529,13 +556,15 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
   <div class="wrap">
     <div>
       <a class="brand" href="#top">The Mawson Trail</a>
-      <p>An independent guide for riders planning the Mawson Trail. For official trail information, closures and route changes, always check <a href="http://www.southaustraliantrails.com/trails/mawson-trail/" target="_blank" rel="noopener">Trails SA</a> before you ride.</p>
+      <p>An independent guide to the Mawson Trail by David Rossi, a local cyclist who has ridden it several times. For official trail information, closures and route changes, always check <a href="http://www.southaustraliantrails.com/trails/mawson-trail/" target="_blank" rel="noopener">Trails SA</a> before you ride.</p>
     </div>
     <ul>
       <li><a href="#route">The route</a></li>
       <li><a href="#towns">Towns along the trail</a></li>
       <li><a href="#resources">Plan your ride</a></li>
       <li><a href="https://www.facebook.com/groups/198260994337150" target="_blank" rel="noopener">Rider community</a></li>
+      <li><a href="https://www.strava.com/athletes/171160" target="_blank" rel="noopener">My Strava</a></li>
+      <li><a href="https://www.instagram.com/bogusjimmy/" target="_blank" rel="noopener">My Instagram</a></li>
     </ul>
     <p class="fine">themawsontrail.com · Photos © David Rossi</p>
   </div>
