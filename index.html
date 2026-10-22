@@ -26,6 +26,7 @@
   --rule: #cfcac0;
   --on-photo: #fbfaf7;
   --night: #1f1b17;       /* footer */
+  --s1: #8fa58a; --s2: #c9b37a; --s3: #d08a4c; --s4: #b65a2c; --s5: #7d3418;  /* surface scale, smooth to rough */
 
   --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
   --body: "Source Serif 4", Georgia, "Times New Roman", serif;
@@ -39,6 +40,7 @@
   :root {
     --ground: #1a1815; --panel: #25221e; --card: #211e1a; --ink: #ece7de; --muted: #a9a195;
     --ochre: #e0784c; --saltbush: #9aab93; --rule: #3a352e; --night: #110f0d;
+    --s1: #7f9679; --s2: #b9a46c; --s3: #d08a4c; --s4: #d0683a; --s5: #a8462a;
     color-scheme: dark;
   }
 }
@@ -141,6 +143,7 @@ p { margin: 0 0 1rem; }
 .muted { color: var(--muted); }
 
 /* Glance */
+.glance-side { min-width: 0; }
 .glance { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem 4rem; align-items: start; }
 @media (max-width: 52rem) { .glance { grid-template-columns: 1fr; } }
 .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; border-top: 2px solid var(--ink); }
@@ -150,6 +153,21 @@ p { margin: 0 0 1rem; }
 .stats dt { font: 400 .78rem/1.3 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
 .stats dd { margin: .3rem 0 0; font: 700 clamp(1.5rem, 3.6vw, 2.2rem)/1.05 var(--display); font-variant-numeric: tabular-nums; }
 .stats dd small { font: 500 1rem/1 var(--display); color: var(--muted); }
+
+
+/* Surface: the Toyota scale */
+.surface { margin-top: 2rem; }
+.surface h3 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.surface > p { margin: .4rem 0 1rem; font-size: .95rem; color: var(--muted); }
+.mix { display: flex; height: .9rem; border-radius: 2px; overflow: hidden; background: var(--panel); }
+.mix span { display: block; height: 100%; }
+.scale { margin: 1rem 0 0; padding: 0; list-style: none; display: grid; gap: .8rem; }
+.scale li { display: grid; grid-template-columns: .9rem minmax(0, 1fr) auto; gap: .2rem .75rem; align-items: baseline; }
+.scale .sw { width: .9rem; height: .9rem; border-radius: 2px; align-self: center; }
+.scale strong { font: 600 1.15rem/1.1 var(--display); letter-spacing: .03em; text-transform: uppercase; }
+.scale strong small { font: 500 .78rem/1 var(--mono); letter-spacing: .02em; text-transform: none; color: var(--muted); margin-left: .35rem; }
+.scale .pct { font: 500 1rem/1 var(--mono); font-variant-numeric: tabular-nums; }
+.scale p { grid-column: 2 / -1; margin: 0; font-size: .92rem; color: var(--muted); }
 
 /* Route */
 .route-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1rem; margin: 1.75rem 0 2rem; }
@@ -327,14 +345,28 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
           </ul>
         </div>
       </div>
+      <div class="glance-side">
       <dl class="stats">
         <div><dt>Length</dt><dd>~900 <small>km</small></dd></div>
         <div><dt>Towns on route</dt><dd>22</dd></div>
         <div><dt>Start</dt><dd>Gorge Rd, Adelaide</dd></div>
         <div><dt>Finish</dt><dd>Blinman</dd></div>
         <div><dt>Ranges</dt><dd>Mt Lofty &amp; Flinders</dd></div>
-        <div><dt>Surface</dt><dd>Mostly dirt</dd></div>
+        <div><dt>Surface</dt><dd><a href="#surface" style="color:inherit;text-decoration:none">Toyota scale ↓</a></dd></div>
       </dl>
+        <div class="surface" id="surface">
+          <h3>Surface: the Toyota scale</h3>
+          <p>Which Toyota would you need to drive it? Here’s how the trail breaks down, from sealed road to proper four-wheel-drive track.</p>
+          <div class="mix" role="img" aria-label="Surface mix by Toyota scale"><span style="width:0%;background:var(--s1)" title="Corolla TBC"></span><span style="width:0%;background:var(--s2)" title="Camry TBC"></span><span style="width:0%;background:var(--s3)" title="RAV4 TBC"></span><span style="width:0%;background:var(--s4)" title="Hilux TBC"></span><span style="width:0%;background:var(--s5)" title="LandCruiser TBC"></span></div>
+          <ul class="scale">
+            <li><span class="sw" style="background:var(--s1)"></span><strong>Corolla <small>Bitumen</small></strong><span class="pct">TBC</span><p>Sealed roads and paths through towns and between sections. Any bike, any tyre.</p></li>
+            <li><span class="sw" style="background:var(--s2)"></span><strong>Camry <small>Light gravel</small></strong><span class="pct">TBC</span><p>Smooth, well-graded dirt roads. A family sedan would cruise it.</p></li>
+            <li><span class="sw" style="background:var(--s3)"></span><strong>RAV4 <small>Slightly technical gravel</small></strong><span class="pct">TBC</span><p>Looser surfaces, corrugations and the odd washout. Wider tyres help.</p></li>
+            <li><span class="sw" style="background:var(--s4)"></span><strong>Hilux <small>Rough gravel</small></strong><span class="pct">TBC</span><p>Rocky, rutted farm and fire tracks that need attention and some skill.</p></li>
+            <li><span class="sw" style="background:var(--s5)"></span><strong>LandCruiser <small>Very technical</small></strong><span class="pct">TBC</span><p>Creek crossings, rocky descents and steep, loose pinches. Expect to walk some.</p></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
