@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>themawsontrail.com</title>
+<meta name="description" content="Planning to ride South Australia's Mawson Trail? The official route in both directions, the towns along the way, and the ten best resources to read before you ride.">
+<meta property="og:title" content="The Mawson Trail">
+<meta property="og:description" content="The official route in both directions, the towns along the way, and the ten best resources to read before you ride.">
+<meta property="og:url" content="https://themawsontrail.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: photo hero, quick-plan tiles, then guidebook sections:
+   stats, route map, towns strip, reading list cards, gallery, dark footer. */
+:root {
+  --ground: #f3f1ec;      /* bleached limestone */
+  --panel: #e7e4dc;
+  --card: #fbfaf7;
+  --ink: #23201c;         /* ironstone */
+  --muted: #625c53;
+  --ochre: #a8461f;       /* Flinders Ranges red earth */
+  --saltbush: #5f705a;    /* grey-green scrub */
+  --rule: #cfcac0;
+  --on-photo: #fbfaf7;
+  --night: #1f1b17;       /* footer */
+
+  --display: "Barlow Condensed", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  --measure: 42rem;
+  --wide: 72rem;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #1a1815; --panel: #25221e; --card: #211e1a; --ink: #ece7de; --muted: #a9a195;
+    --ochre: #e0784c; --saltbush: #9aab93; --rule: #3a352e; --night: #110f0d;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 400 1.0625rem/1.65 var(--body); }
+img { max-width: 100%; display: block; }
+a { color: var(--ochre); text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--ochre); outline-offset: 3px; border-radius: 2px; }
+
+.wrap {
+  max-width: var(--wide); margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.column { max-width: var(--measure); }
+
+/* ---------- Header bar ---------- */
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--ground); border-bottom: 1px solid var(--rule);
+}
+.bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .7rem; }
+.brand {
+  display: inline-flex; align-items: center; gap: .55rem; flex: none;
+  color: var(--ink); text-decoration: none;
+  font: 700 1.15rem/1 var(--display); letter-spacing: .06em; text-transform: uppercase;
+}
+.brand::before { content: ""; width: 1.1rem; height: 1.1rem; background: var(--ochre); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.bar nav { min-width: 0; }
+.bar ul {
+  display: flex; gap: 1.4rem; margin: 0; padding: 0; list-style: none;
+  overflow-x: auto; scrollbar-width: none;
+  font: 600 .95rem/1 var(--display); letter-spacing: .08em; text-transform: uppercase;
+}
+.bar ul a { color: var(--ink); text-decoration: none; white-space: nowrap; }
+.bar ul a:hover { color: var(--ochre); }
+@media (max-width: 40rem) { .bar .wrap { flex-direction: column; align-items: flex-start; gap: .55rem; } .bar nav { max-width: 100%; } }
+
+/* ---------- Hero ---------- */
+.hero {
+  color: var(--on-photo);
+  background:
+    linear-gradient(180deg, rgba(20,16,12,.15) 0%, rgba(20,16,12,.7) 100%),
+    var(--hero-img, linear-gradient(160deg, #7b3a1d 0%, #a8461f 35%, #c98a4b 60%, #8a8f6e 100%));
+  background-size: cover; background-position: center 60%;
+}
+.hero .wrap { padding-block: clamp(6rem, 16vw, 12rem) clamp(4rem, 8vw, 5.5rem); }
+.kicker { margin: 0; font: 600 .85rem/1.3 var(--display); letter-spacing: .16em; text-transform: uppercase; }
+.hero h1 {
+  margin: .75rem 0 0;
+  font: 700 clamp(3.5rem, 13vw, 8.5rem)/.86 var(--display);
+  letter-spacing: -.01em; text-transform: uppercase; text-wrap: balance;
+}
+.hero .lede { max-width: 34rem; margin: 1.25rem 0 0; font-size: clamp(1.1rem, 2.2vw, 1.3rem); line-height: 1.5; }
+.cta { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+.btn {
+  display: inline-block; padding: .8rem 1.2rem; border-radius: 3px;
+  font: 600 1rem/1 var(--display); letter-spacing: .1em; text-transform: uppercase; text-decoration: none;
+  background: #a8461f; color: #fff;
+}
+.btn.ghost { background: transparent; color: var(--on-photo); box-shadow: inset 0 0 0 1.5px rgba(251,250,247,.7); }
+.btn:hover { filter: brightness(1.08); }
+
+/* ---------- Plan tiles ---------- */
+.tiles { margin-top: -2rem; position: relative; }
+.tiles ul {
+  display: grid; grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin: 0; padding: 0; list-style: none;
+  background: var(--card); border: 1px solid var(--rule); border-radius: 4px;
+  box-shadow: 0 10px 30px -18px rgba(20,16,12,.5);
+}
+.tiles li + li { border-left: 1px solid var(--rule); }
+.tiles a { display: grid; align-content: start; gap: .3rem; height: 100%; padding: 1.1rem 1.1rem 1.2rem; color: var(--ink); text-decoration: none; }
+.tiles .t { font: 600 1.15rem/1.1 var(--display); letter-spacing: .05em; text-transform: uppercase; }
+.tiles .d { font-size: .85rem; line-height: 1.35; color: var(--muted); }
+.tiles a:hover .t { color: var(--ochre); }
+@media (max-width: 60rem) {
+  .tiles ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tiles li + li { border-left: 0; }
+  .tiles li:not(:nth-child(3n+1)) { border-left: 1px solid var(--rule); }
+  .tiles li:nth-child(n+4) { border-top: 1px solid var(--rule); }
+}
+@media (max-width: 34rem) {
+  .tiles ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tiles li:not(:nth-child(3n+1)) { border-left: 0; }
+  .tiles li:nth-child(even) { border-left: 1px solid var(--rule); }
+  .tiles li:nth-child(n+3) { border-top: 1px solid var(--rule); }
+}
+
+/* ---------- Sections ---------- */
+section { padding-block: clamp(3rem, 8vw, 5.5rem); }
+section + section { border-top: 1px solid var(--rule); }
+.eyebrow { margin: 0 0 .5rem; font: 600 .8rem/1 var(--display); letter-spacing: .16em; text-transform: uppercase; color: var(--saltbush); }
+h2 { margin: 0 0 1rem; font: 700 clamp(2.2rem, 5vw, 3.2rem)/1 var(--display); text-transform: uppercase; letter-spacing: .005em; text-wrap: balance; }
+h3 { margin: 0; font: 600 1.4rem/1.15 var(--display); letter-spacing: .02em; text-wrap: balance; }
+p { margin: 0 0 1rem; }
+.muted { color: var(--muted); }
+
+/* Glance */
+.glance { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2.5rem 4rem; align-items: start; }
+@media (max-width: 52rem) { .glance { grid-template-columns: 1fr; } }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0; border-top: 2px solid var(--ink); }
+.stats div { padding: 1rem 0 1.1rem; border-bottom: 1px solid var(--rule); min-width: 0; }
+.stats div:nth-child(odd) { padding-right: 1rem; }
+.stats div:nth-child(even) { padding-left: 1rem; border-left: 1px solid var(--rule); }
+.stats dt { font: 400 .78rem/1.3 var(--mono); color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.stats dd { margin: .3rem 0 0; font: 700 clamp(1.5rem, 3.6vw, 2.2rem)/1.05 var(--display); font-variant-numeric: tabular-nums; }
+.stats dd small { font: 500 1rem/1 var(--display); color: var(--muted); }
+
+/* Route */
+.route-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1rem; margin: 1.75rem 0 2rem; }
+.route-link {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1rem 1.1rem; background: var(--panel); border-radius: 3px; color: var(--ink); text-decoration: none;
+}
+.route-link strong { font: 600 1.25rem/1.1 var(--display); letter-spacing: .03em; text-transform: uppercase; }
+.route-link span { font: 400 .8rem/1.2 var(--mono); color: var(--muted); }
+.route-link .arrow { color: var(--ochre); font: 500 1.1rem/1 var(--mono); }
+.route-link:hover strong { color: var(--ochre); }
+.map { background: var(--panel); border: 1px solid var(--rule); border-radius: 3px; overflow: hidden; }
+.map iframe { display: block; }
+
+/* Towns */
+.regions { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); margin-top: 2rem; }
+.region { position: relative; padding: 1.6rem 1rem 0 0; min-width: 0; }
+.region::before { content: ""; position: absolute; left: 0; right: 0; top: .45rem; height: 3px; background: var(--ochre); }
+.region::after { content: ""; position: absolute; left: 0; top: .05rem; width: .8rem; height: .8rem; border-radius: 50%; background: var(--ground); box-shadow: inset 0 0 0 3px var(--ochre); }
+.region h3 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: .07em; }
+.region ul { margin: .5rem 0 0; padding: 0; list-style: none; display: grid; gap: .15rem; font-size: .95rem; color: var(--muted); }
+.region .end { color: var(--ink); font-weight: 600; }
+@media (max-width: 52rem) {
+  .regions { grid-template-columns: 1fr; }
+  .region { padding: 0 0 1.5rem 1.8rem; }
+  .region::before { left: .32rem; right: auto; top: .4rem; bottom: 0; width: 3px; height: auto; }
+  .region:last-child::before { display: none; }
+  .region::after { left: 0; top: .2rem; }
+  .region ul { grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr)); }
+}
+.source { margin: 1.25rem 0 0; font: 400 .78rem/1.5 var(--mono); color: var(--muted); }
+
+/* Resources */
+.resources { list-style: none; margin: 2rem 0 0; padding: 0; counter-reset: site; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); gap: 1rem; }
+.resource {
+  counter-increment: site; display: grid; grid-template-rows: auto auto 1fr; gap: .45rem;
+  padding: 1.25rem 1.25rem 1.3rem; background: var(--card); border: 1px solid var(--rule); border-radius: 4px; min-width: 0;
+}
+.resource .tag { display: flex; justify-content: space-between; gap: 1rem; font: 500 .75rem/1.2 var(--mono); text-transform: uppercase; letter-spacing: .05em; color: var(--saltbush); }
+.resource .tag::after { content: counter(site, decimal-leading-zero); color: var(--ochre); }
+.resource p { margin: .35rem 0 .4rem; color: var(--muted); font-size: .98rem; }
+.resource ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .3rem; align-self: end; font-size: .98rem; }
+.resource li a { overflow-wrap: anywhere; }
+.bonus {
+  margin-top: 1rem; padding: 1.5rem 1.4rem; background: var(--panel); border-radius: 4px;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem 2rem; align-items: center;
+}
+.bonus p { margin: .4rem 0 .6rem; max-width: var(--measure); }
+.bonus .price { font: 700 1.9rem/1 var(--display); color: var(--ochre); }
+@media (max-width: 34rem) { .bonus { grid-template-columns: 1fr; } }
+
+/* Gallery */
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr)); gap: .75rem; margin-top: 2rem; }
+.gallery figure { margin: 0; }
+.gallery img, .ph { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 2px; background: var(--panel); }
+.ph {
+  display: grid; place-items: center;
+  background: repeating-linear-gradient(135deg, var(--panel) 0 12px, var(--ground) 12px 24px);
+  border: 1px dashed var(--rule); font: 400 .8rem/1 var(--mono); color: var(--muted);
+}
+.gallery figcaption { margin-top: .35rem; font: 400 .78rem/1.3 var(--mono); color: var(--muted); }
+
+/* Footer */
+footer { background: var(--night); color: #d9d3c9; padding-block: 3rem 3.5rem; font-size: .95rem; }
+footer .wrap { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 2rem 4rem; }
+@media (max-width: 44rem) { footer .wrap { grid-template-columns: 1fr; } }
+footer a { color: #f0a27f; }
+footer .brand { color: #fbfaf7; margin-bottom: .9rem; }
+footer p { max-width: var(--measure); }
+footer ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .35rem; }
+footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 1px solid rgba(217,211,201,.2); font: 400 .78rem/1.5 var(--mono); color: #a59d91; }
+
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+[id] { scroll-margin-top: 5rem; }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top">The Mawson Trail</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#glance">The trail</a></li>
+        <li><a href="#route">Route</a></li>
+        <li><a href="#towns">Towns</a></li>
+        <li><a href="#resources">Plan your ride</a></li>
+        <li><a href="#photos">Photos</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <p class="kicker">South Australia · Adelaide Hills to the Flinders Ranges</p>
+    <h1>The Mawson<br>Trail</h1>
+    <p class="lede">Almost 900 km of fire trails, farm tracks and quiet dirt roads, from the edge of Adelaide to Blinman in the Flinders Ranges. Everything you need to start planning your ride.</p>
+    <div class="cta">
+      <a class="btn" href="#route">See the route</a>
+      <a class="btn ghost" href="#resources">Plan your ride</a>
+    </div>
+  </div>
+</div>
+
+<div class="tiles">
+  <div class="wrap">
+    <ul>
+      <li><a href="#route"><span class="t">Route &amp; GPS</span><span class="d">Official route, both directions</span></a></li>
+      <li><a href="#towns"><span class="t">Trail towns</span><span class="d">22 stops from the Hills to Blinman</span></a></li>
+      <li><a href="#r-plan"><span class="t">Planning &amp; gear</span><span class="d">Spreadsheets, setups, packing lists</span></a></li>
+      <li><a href="#r-stories"><span class="t">Ride stories</span><span class="d">Trip reports, photos and video</span></a></li>
+      <li><a href="#r-community"><span class="t">Community</span><span class="d">Ask riders who’ve done it</span></a></li>
+      <li><a href="#r-events"><span class="t">Events</span><span class="d">Ride it with support</span></a></li>
+    </ul>
+  </div>
+</div>
+
+<main>
+  <section id="glance">
+    <div class="wrap glance">
+      <div>
+        <p class="eyebrow">At a glance</p>
+        <h2>One of Australia’s great off-road rides</h2>
+        <p>The Mawson Trail starts at the top of the Torrens Linear Park on Gorge Road, just east of Adelaide, and runs north through the Mount Lofty Ranges, the Barossa and Clare valleys and the Mid North into the Flinders Ranges, finishing at Blinman.</p>
+        <p>It is named after geologist and Antarctic explorer Sir Douglas Mawson, who studied the geology of the Flinders Ranges. Cycling groups began planning the trail in 1990 and volunteers marked out the route. It is mostly off-road and well suited to mountain bikes and bikepacking rigs.</p>
+      </div>
+      <dl class="stats">
+        <div><dt>Length</dt><dd>~900 <small>km</small></dd></div>
+        <div><dt>Towns on route</dt><dd>22</dd></div>
+        <div><dt>Start</dt><dd>Gorge Rd, Adelaide</dd></div>
+        <div><dt>Finish</dt><dd>Blinman</dd></div>
+        <div><dt>Ranges</dt><dd>Mt Lofty &amp; Flinders</dd></div>
+        <div><dt>Surface</dt><dd>Mostly dirt</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="route">
+    <div class="wrap">
+      <div class="column">
+        <p class="eyebrow">Official Trails SA route</p>
+        <h2>The route, both ways</h2>
+        <p>These routes were built directly from the Trails SA source. Export them in any format to load onto your bike computer, pin them for later, download them for offline use, or navigate with the RideWithGPS app.</p>
+      </div>
+      <div class="route-links">
+        <a class="route-link" href="https://ridewithgps.com/routes/34440377" target="_blank" rel="noopener">
+          <div><strong>South to North</strong><br><span>Adelaide → Blinman</span></div><span class="arrow">↗</span>
+        </a>
+        <a class="route-link" href="https://ridewithgps.com/routes/34455868" target="_blank" rel="noopener">
+          <div><strong>North to South</strong><br><span>Blinman → Adelaide</span></div><span class="arrow">↗</span>
+        </a>
+      </div>
+      <div class="map">
+        <iframe src="https://ridewithgps.com/embeds?type=collection&collectionId=9111372&title=The%20Mawson%20Trail&metricUnits=true&sampleGraph=true&distanceMarkers=true&privacyCode=rAb8qUgl2VEIOzAlMKVO9ITXH8ConTCL" style="width: 1px; min-width: 100%; height: 700px; border: none;" scrolling="no"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="towns">
+    <div class="wrap">
+      <div class="column">
+        <p class="eyebrow">South to north</p>
+        <h2>Towns along the trail</h2>
+        <p class="muted">The trail links a string of country towns for food, water and a bed. Towns thin out as you head north, so plan your resupply carefully in the Flinders.</p>
+      </div>
+      <div class="regions">
+        <div class="region"><h3>Adelaide Hills</h3><ul><li class="end">Adelaide (Gorge Rd)</li><li>Lobethal</li><li>Birdwood</li></ul></div>
+        <div class="region"><h3>Barossa</h3><ul><li>Rowland Flat</li><li>Tanunda</li><li>Nuriootpa</li></ul></div>
+        <div class="region"><h3>Clare &amp; Mid North</h3><ul><li>Kapunda</li><li>Riverton</li><li>Auburn</li><li>Clare</li><li>Burra</li><li>Hallett</li><li>Spalding</li></ul></div>
+        <div class="region"><h3>Southern Flinders</h3><ul><li>Laura</li><li>Melrose</li><li>Wilmington</li><li>Quorn</li></ul></div>
+        <div class="region"><h3>Flinders Ranges</h3><ul><li>Cradock</li><li>Hawker</li><li>Rawnsley Park Station</li><li>Wilpena</li><li class="end">Blinman</li></ul></div>
+      </div>
+      <p class="source">Town list from <a href="https://en.wikipedia.org/wiki/Mawson_Trail" target="_blank" rel="noopener">Wikipedia</a>. Check <a href="http://www.southaustraliantrails.com/trails/mawson-trail/" target="_blank" rel="noopener">Trails SA</a> for current services and route changes.</p>
+    </div>
+  </section>
+
+  <section id="resources">
+    <div class="wrap">
+      <div class="column">
+        <p class="eyebrow">Plan your ride</p>
+        <h2>The top 10 sites to visit before you ride</h2>
+        <p class="muted">Official information, route files, trip reports, gear lists and the community that knows the trail best.</p>
+      </div>
+
+      <ol class="resources">
+        <li class="resource">
+          <span class="tag">Official info</span>
+          <div><h3>Trails SA</h3><p>The official source of Mawson Trail information.</p></div>
+          <ul><li><a href="http://www.southaustraliantrails.com/trails/mawson-trail/" target="_blank" rel="noopener">southaustraliantrails.com</a></li></ul>
+        </li>
+        <li class="resource">
+          <span class="tag">Route files</span>
+          <div><h3>The Route</h3><p>Created directly from the Trails SA source. Export it, pin it, download it for offline use, or navigate in the RideWithGPS app.</p></div>
+          <ul>
+            <li><a href="https://ridewithgps.com/routes/34440377" target="_blank" rel="noopener">Official route, South to North</a></li>
+            <li><a href="https://ridewithgps.com/routes/34455868" target="_blank" rel="noopener">Official route, North to South</a></li>
+          </ul>
+        </li>
+        <li class="resource" id="r-plan">
+          <span class="tag">Planning &amp; bike setups</span>
+          <div><h3>La Velocita</h3><p>A series of blogs covering different ways to ride the trail and bike setups.</p></div>
+          <ul>
+            <li><a href="https://www.lavelocita.cc/la-velocita-rides/riding-the-mawson-trail" target="_blank" rel="noopener">Riding the Mawson Trail</a></li>
+            <li><a href="https://www.lavelocita.cc/la-velocita-rides/bikepacking-the-mawson-trail" target="_blank" rel="noopener">Bikepacking the Mawson Trail</a></li>
+            <li><a href="https://www.lavelocita.cc/guides-page/mawson-trail-bikepacking-setups" target="_blank" rel="noopener">Mawson Trail Bikepacking Setups</a></li>
+          </ul>
+        </li>
+        <li class="resource">
+          <span class="tag">Planning &amp; packing</span>
+          <div><h3>Nat Redmond</h3><p>A local CX champ’s site with a handy planning spreadsheet.</p></div>
+          <ul>
+            <li><a href="https://natredmond.wordpress.com/2019/12/11/mawson-trail-planning-and-bike-setup/#more-285" target="_blank" rel="noopener">Mawson Trail Planning and Bike Setup</a></li>
+            <li><a href="https://natredmond.wordpress.com/2019/12/11/mawson-trail-qa/#more-326" target="_blank" rel="noopener">Mawson Trail Q&amp;A</a></li>
+            <li><a href="https://natredmond.wordpress.com/2019/11/19/what-i-packed-for-the-mawson-trail/#more-258" target="_blank" rel="noopener">What I Packed For The Mawson Trail</a></li>
+          </ul>
+        </li>
+        <li class="resource">
+          <span class="tag">Route files</span>
+          <div><h3>OpenStreetMap route</h3><p>Another accurate source of the route, usable with the OsmAnd app for iOS and Android.</p></div>
+          <ul><li><a href="https://www.openstreetmap.org/relation/153983" target="_blank" rel="noopener">openstreetmap.org/relation/153983</a></li></ul>
+        </li>
+        <li class="resource">
+          <span class="tag">History &amp; towns</span>
+          <div><h3>Wikipedia</h3><p>History of the trail and information on the towns along it.</p></div>
+          <ul><li><a href="https://en.wikipedia.org/wiki/Mawson_Trail" target="_blank" rel="noopener">Mawson Trail on Wikipedia</a></li></ul>
+        </li>
+        <li class="resource" id="r-events">
+          <span class="tag">Supported event</span>
+          <div><h3>BikeSA Outback Odyssey</h3><p>A regular supported event to ride the trail, run by BikeSA.</p></div>
+          <ul><li><a href="https://bikesa.asn.au/outback-odyssey" target="_blank" rel="noopener">bikesa.asn.au/outback-odyssey</a></li></ul>
+        </li>
+        <li class="resource" id="r-community">
+          <span class="tag">Community</span>
+          <div><h3>Ride the Mawson Trail Facebook group</h3><p>A great place to ask questions and see other people’s experiences.</p></div>
+          <ul><li><a href="https://www.facebook.com/groups/198260994337150" target="_blank" rel="noopener">Join the group</a></li></ul>
+        </li>
+        <li class="resource">
+          <span class="tag">Guide</span>
+          <div><h3>Dave Hume’s Mawson Trail site</h3><p>Comprehensive information from an artist who has ridden the trail many times.</p></div>
+          <ul><li><a href="http://www.davidhume.net/mawsontrail/" target="_blank" rel="noopener">davidhume.net/mawsontrail</a></li></ul>
+        </li>
+        <li class="resource" id="r-stories">
+          <span class="tag">Ride story &amp; video</span>
+          <div><h3>CyclingTips: Roadtripping the Mawson Trail</h3><p>A crew of strong, experienced cyclists complete the trail in tough conditions. Great photos and an almost 15 minute video.</p></div>
+          <ul><li><a href="https://cyclingtips.com/2016/06/roadtripping-the-mawson-trail/" target="_blank" rel="noopener">Read the story and watch the video</a></li></ul>
+        </li>
+      </ol>
+
+      <aside class="bonus" aria-label="Bonus resource">
+        <div>
+          <p class="eyebrow">Bonus</p>
+          <h3>The Mawson Trail App</h3>
+          <p class="muted">High resolution offline maps, a detailed elevation profile, trail and accommodation info along the way, gear advice, and first aid and emergency info. Available for iOS and Android.</p>
+          <a href="https://www.findthefun.com.au/mawson-trail-app" target="_blank" rel="noopener">findthefun.com.au/mawson-trail-app</a>
+        </div>
+        <div class="price">AU$21.99</div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="photos">
+    <div class="wrap">
+      <div class="column">
+        <p class="eyebrow">From the saddle</p>
+        <h2>On the trail</h2>
+        <p class="muted">Landscapes from a ride along the Mawson Trail, October 2020.</p>
+      </div>
+      <div class="gallery" id="gallery">
+        <figure><div class="ph">Photo coming soon</div></figure>
+        <figure><div class="ph">Photo coming soon</div></figure>
+        <figure><div class="ph">Photo coming soon</div></figure>
+        <figure><div class="ph">Photo coming soon</div></figure>
+        <figure><div class="ph">Photo coming soon</div></figure>
+        <figure><div class="ph">Photo coming soon</div></figure>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="brand" href="#top">The Mawson Trail</a>
+      <p>An independent guide for riders planning the Mawson Trail. For official trail information, closures and route changes, always check <a href="http://www.southaustraliantrails.com/trails/mawson-trail/" target="_blank" rel="noopener">Trails SA</a> before you ride.</p>
+    </div>
+    <ul>
+      <li><a href="#route">The route</a></li>
+      <li><a href="#towns">Towns along the trail</a></li>
+      <li><a href="#resources">Plan your ride</a></li>
+      <li><a href="https://www.facebook.com/groups/198260994337150" target="_blank" rel="noopener">Rider community</a></li>
+    </ul>
+    <p class="fine">themawsontrail.com · Photos © David Rossi</p>
+  </div>
+</footer>
+
+</body>
+</html>
