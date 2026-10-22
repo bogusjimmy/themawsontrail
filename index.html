@@ -161,6 +161,7 @@ p { margin: 0 0 1rem; }
 .surface > p { margin: .4rem 0 1rem; font-size: .95rem; color: var(--muted); }
 .mix { display: flex; height: .9rem; border-radius: 2px; overflow: hidden; background: var(--panel); }
 .mix span { display: block; height: 100%; }
+.surface .mix-note { margin: 1.1rem 0 0; font: 600 .95rem/1.2 var(--display); letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
 .scale { margin: 1rem 0 0; padding: 0; list-style: none; display: grid; gap: .8rem; }
 .scale li { display: grid; grid-template-columns: .9rem minmax(0, 1fr) auto; gap: .2rem .75rem; align-items: baseline; }
 .scale .sw { width: .9rem; height: .9rem; border-radius: 2px; align-self: center; }
@@ -352,18 +353,21 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
         <div><dt>Start</dt><dd>Gorge Rd, Adelaide</dd></div>
         <div><dt>Finish</dt><dd>Blinman</dd></div>
         <div><dt>Ranges</dt><dd>Mt Lofty &amp; Flinders</dd></div>
-        <div><dt>Surface</dt><dd><a href="#surface" style="color:inherit;text-decoration:none">Toyota scale ↓</a></dd></div>
+        <div><dt>Surface</dt><dd><a href="#surface" style="color:inherit;text-decoration:none">85% unpaved ↓</a></dd></div>
       </dl>
         <div class="surface" id="surface">
           <h3>Surface: the Toyota scale</h3>
-          <p>Which Toyota would you need to drive it? Here’s how the trail breaks down, from sealed road to proper four-wheel-drive track.</p>
-          <div class="mix" role="img" aria-label="Surface mix by Toyota scale"><span style="width:0%;background:var(--s1)" title="Corolla TBC"></span><span style="width:0%;background:var(--s2)" title="Camry TBC"></span><span style="width:0%;background:var(--s3)" title="RAV4 TBC"></span><span style="width:0%;background:var(--s4)" title="Hilux TBC"></span><span style="width:0%;background:var(--s5)" title="LandCruiser TBC"></span></div>
+          <p>Which Toyota would you need to drive it? About 15% of the trail is sealed. The other 85% is unpaved, and it covers everything from smooth gravel to proper four-wheel-drive track.</p>
+          <div class="mix" role="img" aria-label="15% sealed, 85% unpaved"><span style="width:15%;background:var(--s1)"></span><span style="width:85%;background:linear-gradient(90deg, var(--s2), var(--s3), var(--s4), var(--s5))"></span></div>
           <ul class="scale">
-            <li><span class="sw" style="background:var(--s1)"></span><strong>Corolla <small>Bitumen</small></strong><span class="pct">TBC</span><p>Sealed roads and paths through towns and between sections. Any bike, any tyre.</p></li>
-            <li><span class="sw" style="background:var(--s2)"></span><strong>Camry <small>Light gravel</small></strong><span class="pct">TBC</span><p>Smooth, well-graded dirt roads. A family sedan would cruise it.</p></li>
-            <li><span class="sw" style="background:var(--s3)"></span><strong>RAV4 <small>Slightly technical gravel</small></strong><span class="pct">TBC</span><p>Looser surfaces, corrugations and the odd washout. Wider tyres help.</p></li>
-            <li><span class="sw" style="background:var(--s4)"></span><strong>Hilux <small>Rough gravel</small></strong><span class="pct">TBC</span><p>Rocky, rutted farm and fire tracks that need attention and some skill.</p></li>
-            <li><span class="sw" style="background:var(--s5)"></span><strong>LandCruiser <small>Very technical</small></strong><span class="pct">TBC</span><p>Creek crossings, rocky descents and steep, loose pinches. Expect to walk some.</p></li>
+            <li><span class="sw" style="background:var(--s1)"></span><strong>Corolla <small>Bitumen</small></strong><span class="pct">15%</span><p>Sealed roads and paths through towns and between sections. Any bike, any tyre.</p></li>
+          </ul>
+          <p class="mix-note">The unpaved 85% is a mix of:</p>
+          <ul class="scale">
+            <li><span class="sw" style="background:var(--s2)"></span><strong>Camry <small>Light gravel</small></strong><p>Smooth, well-graded dirt roads. A family sedan would cruise it.</p></li>
+            <li><span class="sw" style="background:var(--s3)"></span><strong>RAV4 <small>Slightly technical gravel</small></strong><p>Looser surfaces, corrugations and the odd washout. Wider tyres help.</p></li>
+            <li><span class="sw" style="background:var(--s4)"></span><strong>Hilux <small>Rough gravel</small></strong><p>Rocky, rutted farm and fire tracks that need attention and some skill.</p></li>
+            <li><span class="sw" style="background:var(--s5)"></span><strong>LandCruiser <small>Very technical</small></strong><p>Creek crossings, rocky descents and steep, loose pinches. Expect to walk some.</p></li>
           </ul>
         </div>
       </div>
