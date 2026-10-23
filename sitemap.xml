@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://themawsontrail.com/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <image:image>
+      <image:loc>https://themawsontrail.com/photos/full/flinders-ranges-lookout.jpg</image:loc>
+      <image:caption>Looking out to the Flinders Ranges</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://themawsontrail.com/photos/full/wildflower-hills.jpg</image:loc>
+      <image:caption>Hillsides purple with wildflowers in spring</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://themawsontrail.com/photos/full/scrub-valley-clouds.jpg</image:loc>
+      <image:caption>Saltbush and mallee scrub falling away to a broad valley under cloud</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://themawsontrail.com/photos/full/gravel-road-ranges-view.jpg</image:loc>
+      <image:caption>A gravel road curving toward distant ranges under heavy cloud</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://themawsontrail.com/photos/full/sunset-valley-clouds.jpg</image:loc>
+      <image:caption>Late sun breaking through cloud over rolling hills and wind turbines</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://themawsontrail.com/photos/full/rusted-car-wreck.jpg</image:loc>
+      <image:caption>An old car wreck in the saltbush</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://themawsontrail.com/photos/full/sheep-mob.jpg</image:loc>
+      <image:caption>A mob of sheep on the move</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://themawsontrail.com/photos/full/magpie-over-wheatfield.jpg</image:loc>
+      <image:caption>A magpie swooping over a wheat field</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://themawsontrail.com/photos/full/flinders-track-kangaroo.jpg</image:loc>
+      <image:caption>A kangaroo crossing the track, Flinders Ranges</image:caption>
+    </image:image>
+  </url>
+</urlset>
