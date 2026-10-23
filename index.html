@@ -276,6 +276,10 @@ p { margin: 0 0 1rem; }
 .scale .pct { font: 500 1rem/1 var(--mono); font-variant-numeric: tabular-nums; }
 .scale p { grid-column: 2 / -1; margin: 0; font-size: .92rem; color: var(--muted); }
 
+.warn { margin-top: 1.25rem; padding: .9rem 1rem; border-left: 3px solid var(--s5); background: var(--panel); border-radius: 0 3px 3px 0; }
+.warn strong { font: 600 1.05rem/1.2 var(--display); letter-spacing: .05em; text-transform: uppercase; color: var(--ochre); }
+.warn p { margin: .35rem 0 0; font-size: .92rem; color: var(--ink); }
+
 /* Route */
 .route-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1rem; margin: 1.75rem 0 2rem; }
 .route-link {
@@ -501,6 +505,10 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
             <li><span class="sw" style="background:var(--s4)"></span><strong>Hilux <small>Rough gravel</small></strong><p>Rocky, rutted farm and fire tracks that need attention and some skill.</p></li>
             <li><span class="sw" style="background:var(--s5)"></span><strong>LandCruiser <small>Very technical</small></strong><p>Creek crossings, rocky descents and steep, loose pinches. Expect to walk some.</p></li>
           </ul>
+          <aside class="warn" role="note">
+            <strong>After heavy rain: “Death Mud”</strong>
+            <p>Some sections of red dirt, mostly from the Barossa through the Clare Valley and north of Burra, turn to “Death Mud” after heavy rain. It clogs wheels and frames and is impassable, so check the weather and be ready to take a road detour.</p>
+          </aside>
         </div>
       </div>
     </div>
