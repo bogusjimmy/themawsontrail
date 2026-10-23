@@ -341,6 +341,8 @@ p { margin: 0 0 1rem; }
   background: repeating-linear-gradient(135deg, var(--panel) 0 12px, var(--ground) 12px 24px);
   border: 1px dashed var(--rule); font: 400 .8rem/1 var(--mono); color: var(--muted);
 }
+.gallery figcaption .loc { display: block; margin-top: .1rem; color: var(--saltbush); }
+.gallery figcaption .loc::before { content: "⌖ "; }
 .gallery figcaption { margin-top: .35rem; font: 400 .78rem/1.3 var(--mono); color: var(--muted); }
 
 
@@ -496,7 +498,7 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
     </div>
   </section>
 
-  <figure class="band"><img src="photos/wildflower-hills.jpg" alt="Hillsides purple with wildflowers in spring" width="2000" height="1500" loading="lazy" decoding="async"><figcaption><span>Hillsides purple with wildflowers in spring</span></figcaption></figure>
+  <figure class="band"><img src="photos/wildflower-hills.jpg" alt="Hillsides purple with wildflowers in spring" width="2000" height="1500" loading="lazy" decoding="async"><figcaption><span>Hillsides purple with wildflowers in spring · Near Burra</span></figcaption></figure>
 
   <section id="route">
     <div class="wrap">
@@ -546,7 +548,7 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
     </div>
   </section>
 
-  <figure class="band"><img src="photos/scrub-valley-clouds.jpg" alt="Saltbush and mallee scrub falling away to a broad valley under cloud" width="2000" height="1333" loading="lazy" decoding="async"><figcaption><span>Saltbush and mallee scrub falling away to a broad valley under cloud</span></figcaption></figure>
+  <figure class="band"><img src="photos/scrub-valley-clouds.jpg" alt="Saltbush and mallee scrub falling away to a broad valley under cloud" width="2000" height="1333" loading="lazy" decoding="async"><figcaption><span>Saltbush and mallee scrub falling away to a broad valley under cloud · Near Collinsville, north-east of Burra</span></figcaption></figure>
 
   <section id="towns">
     <div class="wrap">
@@ -566,7 +568,7 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
     </div>
   </section>
 
-  <figure class="band"><img src="photos/gravel-road-ranges-view.jpg" alt="A gravel road curving toward distant ranges under heavy cloud" width="2000" height="1334" loading="lazy" decoding="async"><figcaption><span>A gravel road curving toward distant ranges under heavy cloud</span></figcaption></figure>
+  <figure class="band"><img src="photos/gravel-road-ranges-view.jpg" alt="A gravel road curving toward distant ranges under heavy cloud" width="2000" height="1334" loading="lazy" decoding="async"><figcaption><span>A gravel road curving toward distant ranges under heavy cloud · Near Collinsville, north-east of Burra</span></figcaption></figure>
 
   <section id="resources">
     <div class="wrap">
@@ -623,7 +625,7 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
     </div>
   </section>
 
-  <figure class="band"><img src="photos/sunset-valley-clouds.jpg" alt="Late sun breaking through cloud over rolling hills and wind turbines" width="2000" height="794" loading="lazy" decoding="async"><figcaption><span>Late sun breaking through cloud over rolling hills and wind turbines</span></figcaption></figure>
+  <figure class="band"><img src="photos/sunset-valley-clouds.jpg" alt="Late sun breaking through cloud over rolling hills and wind turbines" width="2000" height="794" loading="lazy" decoding="async"><figcaption><span>Late sun breaking through cloud over rolling hills and wind turbines · Near Hallett</span></figcaption></figure>
 
   <section id="photos">
     <div class="wrap">
@@ -633,15 +635,15 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
         <p class="muted">Landscapes from riding the Mawson Trail with friends in October 2020, a month after Race to the Rock. I took every photo on this site. Tap a photo to see it full size.</p>
       </div>
       <div class="gallery" id="gallery">
-        <figure><a href="photos/full/flinders-ranges-lookout.jpg" data-full><img src="photos/flinders-ranges-lookout.jpg" alt="Looking out to the Flinders Ranges" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>Looking out to the Flinders Ranges</figcaption></figure>
-        <figure><a href="photos/full/wildflower-hills.jpg" data-full><img src="photos/wildflower-hills.jpg" alt="Hillsides purple with wildflowers in spring" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>Hillsides purple with wildflowers in spring</figcaption></figure>
-        <figure><a href="photos/full/scrub-valley-clouds.jpg" data-full><img src="photos/scrub-valley-clouds.jpg" alt="Saltbush and mallee scrub falling away to a broad valley under cloud" width="2000" height="1333" loading="lazy" decoding="async"></a><figcaption>Saltbush and mallee scrub falling away to a broad valley under cloud</figcaption></figure>
-        <figure><a href="photos/full/gravel-road-ranges-view.jpg" data-full><img src="photos/gravel-road-ranges-view.jpg" alt="A gravel road curving toward distant ranges under heavy cloud" width="2000" height="1334" loading="lazy" decoding="async"></a><figcaption>A gravel road curving toward distant ranges under heavy cloud</figcaption></figure>
-        <figure><a href="photos/full/sunset-valley-clouds.jpg" data-full><img src="photos/sunset-valley-clouds.jpg" alt="Late sun breaking through cloud over rolling hills and wind turbines" width="2000" height="794" loading="lazy" decoding="async"></a><figcaption>Late sun breaking through cloud over rolling hills and wind turbines</figcaption></figure>
-        <figure><a href="photos/full/rusted-car-wreck.jpg" data-full><img src="photos/rusted-car-wreck.jpg" alt="An old car wreck in the saltbush" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>An old car wreck in the saltbush</figcaption></figure>
-        <figure><a href="photos/full/sheep-mob.jpg" data-full><img src="photos/sheep-mob.jpg" alt="A mob of sheep on the move" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>A mob of sheep on the move</figcaption></figure>
-        <figure><a href="photos/full/magpie-over-wheatfield.jpg" data-full><img src="photos/magpie-over-wheatfield.jpg" alt="A magpie swooping over a wheat field" width="1500" height="2000" loading="lazy" decoding="async"></a><figcaption>A magpie swooping over a wheat field</figcaption></figure>
-        <figure><a href="photos/full/flinders-track-kangaroo.jpg" data-full><img src="photos/flinders-track-kangaroo.jpg" alt="A kangaroo crossing the track, Flinders Ranges" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>A kangaroo crossing the track, Flinders Ranges</figcaption></figure>
+        <figure><a href="photos/full/flinders-ranges-lookout.jpg" data-full data-loc="Ikara-Flinders Ranges National Park"><img src="photos/flinders-ranges-lookout.jpg" alt="Looking out to the Flinders Ranges" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>Looking out to the Flinders Ranges<span class="loc">Ikara-Flinders Ranges National Park</span></figcaption></figure>
+        <figure><a href="photos/full/wildflower-hills.jpg" data-full data-loc="Near Burra"><img src="photos/wildflower-hills.jpg" alt="Hillsides purple with wildflowers in spring" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>Hillsides purple with wildflowers in spring<span class="loc">Near Burra</span></figcaption></figure>
+        <figure><a href="photos/full/scrub-valley-clouds.jpg" data-full data-loc="Near Collinsville, north-east of Burra"><img src="photos/scrub-valley-clouds.jpg" alt="Saltbush and mallee scrub falling away to a broad valley under cloud" width="2000" height="1333" loading="lazy" decoding="async"></a><figcaption>Saltbush and mallee scrub falling away to a broad valley under cloud<span class="loc">Near Collinsville, north-east of Burra</span></figcaption></figure>
+        <figure><a href="photos/full/gravel-road-ranges-view.jpg" data-full data-loc="Near Collinsville, north-east of Burra"><img src="photos/gravel-road-ranges-view.jpg" alt="A gravel road curving toward distant ranges under heavy cloud" width="2000" height="1334" loading="lazy" decoding="async"></a><figcaption>A gravel road curving toward distant ranges under heavy cloud<span class="loc">Near Collinsville, north-east of Burra</span></figcaption></figure>
+        <figure><a href="photos/full/sunset-valley-clouds.jpg" data-full data-loc="Near Hallett"><img src="photos/sunset-valley-clouds.jpg" alt="Late sun breaking through cloud over rolling hills and wind turbines" width="2000" height="794" loading="lazy" decoding="async"></a><figcaption>Late sun breaking through cloud over rolling hills and wind turbines<span class="loc">Near Hallett</span></figcaption></figure>
+        <figure><a href="photos/full/rusted-car-wreck.jpg" data-full data-loc="Near Kanyaka, between Quorn and Hawker"><img src="photos/rusted-car-wreck.jpg" alt="An old car wreck in the saltbush" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>An old car wreck in the saltbush<span class="loc">Near Kanyaka, between Quorn and Hawker</span></figcaption></figure>
+        <figure><a href="photos/full/sheep-mob.jpg" data-full data-loc="Near Hacklins Corner"><img src="photos/sheep-mob.jpg" alt="A mob of sheep on the move" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>A mob of sheep on the move<span class="loc">Near Hacklins Corner</span></figcaption></figure>
+        <figure><a href="photos/full/magpie-over-wheatfield.jpg" data-full data-loc="Near Willalo"><img src="photos/magpie-over-wheatfield.jpg" alt="A magpie swooping over a wheat field" width="1500" height="2000" loading="lazy" decoding="async"></a><figcaption>A magpie swooping over a wheat field<span class="loc">Near Willalo</span></figcaption></figure>
+        <figure><a href="photos/full/flinders-track-kangaroo.jpg" data-full data-loc="North of Hawker, Flinders Ranges"><img src="photos/flinders-track-kangaroo.jpg" alt="A kangaroo crossing the track, Flinders Ranges" width="2000" height="1500" loading="lazy" decoding="async"></a><figcaption>A kangaroo crossing the track, Flinders Ranges<span class="loc">North of Hawker, Flinders Ranges</span></figcaption></figure>
       </div>
     </div>
   </section>
@@ -688,7 +690,7 @@ footer .fine { grid-column: 1 / -1; margin: 0; padding-top: 1.5rem; border-top: 
     var a = links[i], thumb = a.querySelector('img');
     img.onerror = function () { img.onerror = null; img.src = thumb.src; orig.href = thumb.src; };
     img.src = a.href; img.alt = thumb.alt; orig.href = a.href;
-    cap.textContent = thumb.alt;
+    cap.textContent = thumb.alt + (a.dataset.loc ? ' · ' + a.dataset.loc : '');
     count.textContent = (i + 1) + ' / ' + links.length;
     var next = new Image(); next.src = links[(i + 1) % links.length].href;
   }
