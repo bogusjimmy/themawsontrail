@@ -39,5 +39,17 @@
       <image:loc>https://themawsontrail.com/photos/full/flinders-track-kangaroo.jpg</image:loc>
       <image:caption>A kangaroo crossing the track, Flinders Ranges (North of Hawker, Flinders Ranges)</image:caption>
     </image:image>
+    <image:image>
+      <image:loc>https://themawsontrail.com/photos/full/first-trail-marker.jpg</image:loc>
+      <image:caption>The first Mawson Trail marker at the end of Linear Park, Gorge Road, Athelstone</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://themawsontrail.com/photos/full/blinman-north-trailhead.jpg</image:loc>
+      <image:caption>The Mawson Trail northern trailhead sign at Blinman North</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://themawsontrail.com/photos/full/mawson-bust-north-terrace.jpg</image:loc>
+      <image:caption>The bust of Sir Douglas Mawson on North Terrace, Adelaide, a suggested start for the Mawson Trail</image:caption>
+    </image:image>
   </url>
 </urlset>
